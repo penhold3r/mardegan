@@ -1,0 +1,50 @@
+@import 'variables';
+/**/
+html,
+body {
+	width: 100vw;
+}
+//
+body {
+	background: #222 url('../images/mardegan-bg.jpg') no-repeat fixed center / cover;
+	color: #eee;
+	font-family: 'aleoregular', 'Trebuchet MS', Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	/**/
+	scroll-snap-type: mandatory;
+	/* older spec implementation */
+	scroll-snap-destination: 0% 100%;
+	scroll-snap-points-x: repeat(100%);
+}
+/**/
+em,
+i {
+	font-family: 'aleoitalic', 'Trebuchet MS', Arial, sans-serif;
+}
+/**/
+strong,
+b {
+	font-family: 'aleobold', 'Trebuchet MS', Arial, sans-serif;
+}
+/**/
+strong em,
+strong i,
+b em,
+b i,
+em strong,
+i strong,
+em b,
+i b {
+	font-family: 'aleobolditalic', 'Trebuchet MS', Arial, sans-serif;
+}
+/**/
+section {
+	min-height: 600px;
+	scroll-snap-align: start;
+}
+.react-parallax-bgimage {
+	object-fit: cover !important;
+}

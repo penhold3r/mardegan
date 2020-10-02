@@ -1,0 +1,31 @@
+@import 'variables';
+/**/
+section.gallery {
+   min-height: auto;
+   //
+   .gallery-container {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      //
+      figure.image {
+         margin: 0;
+         padding: 0;
+         //
+         img {
+            filter: grayscale(1);
+            transition: all 0.3s;
+            width: 100%;
+            //
+            &:hover {
+               filter: grayscale(0);
+            }
+         }
+         //
+         figcaption {
+            text-align: center;
+            padding: 15px;
+         }
+      }
+   }
+}

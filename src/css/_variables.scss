@@ -1,0 +1,40 @@
+//
+$main-color: rgb(175, 190, 67);
+$secondary-color: rgb(129, 153, 62);
+//
+//@import 'fonts.css';
+$aleo: 'Aleo', 'aleoregular', 'Trebuchet', 'Arial', sans-serif;
+$titles: 'downcome', 'Helvetica', sans-serif;
+$display: 'wreath', 'Georgia', serif;
+//
+@mixin optional-at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
+}
+//
+@mixin placeholder {
+	@include optional-at-root('::-webkit-input-placeholder') {
+		@content;
+	}
+	@include optional-at-root(':-moz-placeholder') {
+		@content;
+	}
+	@include optional-at-root('::-moz-placeholder') {
+		@content;
+	}
+	@include optional-at-root(':-ms-input-placeholder') {
+		@content;
+	}
+}
+//
+@mixin tablet($width: 800px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}
+@mixin phone($width: 500px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}

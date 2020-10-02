@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'wreath';
+	src: url('fonts/wreath_halreg-webfont.eot');
+	src: url('fonts/wreath_halreg-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/wreath_halreg-webfont.woff') format('woff'),
+		url('fonts/wreath_halreg-webfont.ttf') format('truetype'),
+		url('fonts/wreath_halreg-webfont.svg#aleobold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

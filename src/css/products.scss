@@ -1,0 +1,102 @@
+@import 'variables';
+/**/
+section.products {
+   min-height: 100vh;
+   padding-top: 100px;
+   width: 100vw; 
+   //
+   .prod-header {
+      h1 {
+         color: $main-color;
+         font: 3em $titles;
+         letter-spacing: 0.05em;
+         margin: 0 0 1em;
+         padding: 0;
+         text-align: center;
+      }
+   }
+   //
+   .section-content {
+      grid-gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin: 0 auto;
+      max-width: 1000px;
+      width: 90%;
+      //
+      .line {
+         background: #222;
+         border-radius: 5px;
+         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+         display: grid;
+         grid-template-rows: 2fr 1fr;
+         height: 50vh;
+         min-height: 350px;
+         max-height: 450px;
+         overflow: hidden;
+         position: relative;
+         transition: all 0.4s;
+         //
+         @include tablet {
+            grid-column: 1 / -1;
+            height: 300px;
+            min-height: 300px;
+            max-height: 300px;
+         }
+         //
+         h2 {
+            align-self: end;
+            color: $main-color;
+            font: 3em $display;
+            justify-self: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 10px 25px rgba(0, 0, 0, 0.7);;
+            z-index: 1;
+            //
+            span {
+               color: #FFF;
+               display: block;
+               font: 1em $titles;
+               letter-spacing: 0.05em;
+            }
+         }
+         //
+         a {
+            align-self: start;
+            background: $secondary-color;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+            color: #FFF;
+            justify-self: center;
+            padding: 6px 9px;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 1;
+            //
+            &:hover {
+               background: $main-color;
+            }
+         }
+         //
+         img {
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            position: absolute;
+            transition: all 0.3s;
+            width: 100%;
+            z-index: 0;
+         }
+         //
+         &:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+            //
+            img {
+               opacity: 0.6;
+            }
+         }
+      } // .line
+   }// .section-content
+}// section

@@ -1,0 +1,78 @@
+@import 'variables';
+/**/
+section.about {
+   display: flex;
+   height: 100vh;
+   min-height: 550px;
+   padding: 15px;
+   width: 100vw;
+   //
+   @include phone {
+      padding: 0;
+   }
+   //
+   .section-content {
+      background: rgba($main-color, 0.75);
+      background: linear-gradient(45deg, rgba($main-color, 0.75), rgba($secondary-color, 0.95));
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin: auto;
+      max-width: 900px;
+      padding: 30px;
+      //
+      @include phone {
+         background: $main-color;
+         display: block;
+         margin-top: -15px;
+      }
+      //
+      .about-header {
+         align-self: center;
+         justify-self: center;
+         //
+         h1 {
+            color: #000;
+            font: 4em 'downcome', 'Helvetica', sans-serif;
+            line-height: 95%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            //
+            span {
+               color: #FFF;
+               font-size: 1.5em;
+            }
+            &:after {
+               background: url('../images/mardegan-arrow.svg') no-repeat center center / contain;
+               content: '';
+               display: block;
+               height: 50px;
+               margin: 15px;
+               width: 90%;
+            }
+         } // h1
+      } // .about-header
+      .about-text {
+         p {
+            margin-bottom: 1em;
+            padding: 0;
+         }
+         .feat-text {
+            em{
+               color: #000;
+               font: 1.5em 'wreath', 'Georgia', serif;
+               line-height: 95%;
+            }
+         }
+      } // .about-text
+   } // .section-content
+} // section
+//
+@include phone {
+   .react-parallax-bgimage {
+      position: relative !important;
+      height: 300px !important;
+      width: 100% !important;
+   }
+}

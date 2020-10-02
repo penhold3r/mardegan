@@ -1,0 +1,68 @@
+@import 'variables';
+/**/
+.main-nav {
+	align-self: center;
+	justify-self: end;
+	margin: 15px 30px;
+	transition: all 0.6s;
+	//
+	ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		//
+		@include tablet {
+			flex-direction: column;
+		}
+		//
+		li {
+			border-right: 1px solid $secondary-color;
+			//
+			@include tablet {
+				border: none;
+			}
+			//
+			&:last-child {
+				border: none;
+			}
+			.main-link,
+			.line-link {
+				cursor: pointer;
+				color: #fff;
+				display: block;
+				letter-spacing: 0.05em;
+				padding: 3px 12px;
+				text-decoration: none;
+				text-transform: uppercase;
+				transition: all 0.3s;
+				//
+				@include tablet {
+					line-height: 40px;
+					margin-right: 10%;
+					text-align: right;
+				}
+				//
+				&:hover {
+					color: $main-color;
+				}
+			}
+		}
+	} // nav ul
+	//
+	@include tablet {
+		grid-column: 1 / -1;
+		justify-self: stretch;
+		height: 100vh;
+		margin: 0;
+		opacity: 0;
+		padding-top: 30px;
+	}
+} // .main-nav
+//
+header.expanded {
+	.main-nav {
+		opacity: 1;
+		padding-top: 90px;
+	}
+}

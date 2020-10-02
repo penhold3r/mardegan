@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'downcome';
+	src: url('fonts/downcome-webfont.eot');
+	src: url('fonts/downcome-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/downcome-webfont.woff') format('woff'),
+		url('fonts/downcome-webfont.ttf') format('truetype'),
+		url('fonts/downcome-webfont.svg#aleobold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

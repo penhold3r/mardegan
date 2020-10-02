@@ -1,21 +1,53 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+//import ReactDOM from 'react-dom'
+//import scrollToComponent from 'react-scroll-to-component'
+// components
+import Layout from '../components/Layout'
+import Header from '../components/Header'
+// sections
+import Home from '../components/Home'
+import About from '../components/About'
+import Products from '../components/Products'
+import Contact from '../components/Contact'
+//
+class IndexPage extends Component {
+	constructor() {
+		super()
+		this.state = {
+			scrollToComponent: null
+		}
+		this.handleScrollTo = this.handleScrollTo.bind(this)
+	}
+	//
+	handleScrollTo(section) {
+		// const ref = ReactDOM.findDOMNode(this.refs[section])
+		// const { scrollToComponent } = this.state
+		// scrollToComponent(ref, {
+		// 	offset: 0,
+		// 	align: 'top',
+		// 	duration: 1000,
+		// 	ease: 'inOutSine'
+		// })
+	}
+	//
+	render() {
+		const { location } = this.props
+		//
+		return (
+			<Layout>
+				<Header menuClick={this.handleScrollTo} location={location} />
+				<Home prodClick={this.handleScrollTo} />
+				<About ref="quienes-somos" />
+				<Products ref="productos" />
+				<Contact ref="contacto" />
+			</Layout>
+		)
+	}
+}
+//
+IndexPage.propTypes = {
+	location: PropTypes.object
+}
+//
 export default IndexPage

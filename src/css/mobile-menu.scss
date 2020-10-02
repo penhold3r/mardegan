@@ -1,0 +1,51 @@
+@import 'variables';
+/**/
+@include tablet {
+   .mobile-menu {
+      grid-column: 2 / -1;
+      height: 25px;
+      justify-self: end;
+      margin-right: 15px;
+      position: relative;
+      top: 15px;
+      width: 30px;
+      //
+      span.menu-bar {
+         background: $main-color;
+         display: block;
+         height: 2px;
+         position: absolute;
+         right: 0;
+         top: calc(50% - 1px);
+         transition: all 0.3s;
+         width: 60%;
+         //
+         &:first-child {
+            top: 10%;
+            width: 100%;
+         }
+         &:last-child {
+            top: auto;
+            bottom: 10%;
+            width: 80%;
+         }
+      }
+   }
+   .mobile-menu.crossed {
+      span.menu-bar{
+         &:first-child {
+            transform: rotate(40deg);
+            top: 12px;
+            width: 90%;
+         }
+         &:nth-child(2) {
+            opacity: 0;
+         }
+         &:last-child {
+            bottom: 11px;
+            transform: rotate(-40deg);
+            width: 90%;
+         }
+      }
+   }
+}
